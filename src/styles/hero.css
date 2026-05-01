@@ -1,0 +1,17 @@
+.hero {
+  margin-top: auto;
+}
+
+.word {
+  color: var(--accent);
+}
+
+.btn_see,
+.btn_getintouch {
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.btn_see {
+  background-color: var(--accent);
+}

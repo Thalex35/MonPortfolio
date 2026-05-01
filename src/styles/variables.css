@@ -1,0 +1,35 @@
+:root {
+  --bg-base: #0c0e14;
+  --bg-raised: #111520;
+  --bg-card: #161b27;
+  --bg-card-hover: #1b2133;
+
+  --accent: #00e5a0;
+  --accent-dim: rgba(0, 229, 160, 0.08);
+  --accent-border: rgba(0, 229, 160, 0.22);
+
+  --text-hi: #edf0f7;
+  --text-mid: #6b7590;
+  --text-lo: #353d52;
+
+  --border: rgba(255, 255, 255, 0.06);
+  --border-md: rgba(255, 255, 255, 0.1);
+
+  --font-head: "Bricolage Grotesque", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-hi);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}

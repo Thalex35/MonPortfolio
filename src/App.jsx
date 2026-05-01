@@ -1,5 +1,61 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
 
-function App() {}
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <About />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/projects"
+          element={
+            <Layout>
+              <Projects />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/skills"
+          element={
+            <Layout>
+              <Skills />
+            </Layout>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;
