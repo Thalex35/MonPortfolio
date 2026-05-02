@@ -8,7 +8,7 @@ export default function Hero() {
         <p className="word">available for opportunities</p>
         <h2>Hello, I'm Theodore -</h2>
         <h1>
-          Full-Stack
+          Front-end
           <span>Developer.</span>
         </h1>
         <p className="para">
