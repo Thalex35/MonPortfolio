@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section className="about">
       <p className="about_kicker">ABOUT ME</p>
-      <h1>Developer, student & leader.</h1>
+      <h1>Developer, student & christian.</h1>
       <p className="about_intro">
         A little about who I am, where I come from, and what drives me.
       </p>
@@ -25,19 +25,25 @@ export default function About() {
           </p>
           <p>
             I&apos;m passionate about building things that are{" "}
-            <strong>clean, functional, and well-crafted</strong> - from Java
-            desktop apps to React web platforms. Every project teaches me
-            something new.
+            <strong>clean, functional, and well-crafted</strong> - whether it's
+            a Java desktop application or a full React web platform. For me,
+            every project is more than just code — it's a chance to solve a real
+            problem, learn something new, and grow as a developer. I pay close
+            attention to detail, and I believe that good software should not
+            only work well, but also feel good to use.
           </p>
           <p>
-            I&apos;m also a <strong>church leader</strong> - I coordinate the
-            children&apos;s ministry at my local church, which taught me that
-            leadership, planning, and communication are just as important as
-            technical skills.
+            I&apos;m urrently focused on <strong>front-end development</strong>{" "}
+            , where I enjoy turning ideas into smooth, intuitive user
+            interfaces. I work mainly with{" "}
+            <strong>React.js, JavaScript, HTML, and CSS</strong>, always pushing
+            myself to write cleaner, more efficient code.
           </p>
           <p>
             I&apos;m a <strong>Christian</strong>, and my faith shapes how I
             approach work: with integrity, purpose, and care for others.
+            <br></br> I'm at the beginning of my journey, but I'm building every
+            day — one project, one line of code, one lesson at a time.
           </p>
         </div>
       </div>
@@ -61,12 +67,12 @@ export default function About() {
         <div className="about_hobbies">
           <p className="about_hobbies_title">INTERESTS & HOBBIES</p>
           <div className="about_hobbies_list">
-            <span>💻 Web development</span>
-            <span>🎮 Anime</span>
-            <span>⛪ Church services</span>
-            <span>📊 Business</span>
-            <span>🌐 Learning English</span>
-            <span>🧠 Problem solving</span>
+            <span> Web development</span>
+            <span> Anime</span>
+            <span> Church services</span>
+            <span> Business</span>
+            <span> Learning English</span>
+            <span> Problem solving</span>
           </div>
         </div>
       </div>

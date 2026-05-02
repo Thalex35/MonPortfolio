@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../styles/hero.css";
 
-export default function Hero() {
+export default function Hero({ btnGIT = true }) {
   return (
     <section className="hero">
       <div className="hero_text">
@@ -13,8 +13,7 @@ export default function Hero() {
         </h1>
         <p className="para">
           CS student at UoPeople. I build clean, functional web applications
-          with modern tools - React, Node.js, Java - and a strong eye for
-          detail.
+          with modern tools - React, Java - and a strong eye for detail.
         </p>
       </div>
 
@@ -23,9 +22,11 @@ export default function Hero() {
           <button className="btn_see">View projects</button>
         </Link>
 
-        <Link to="/contact">
-          <button className="btn_getintouch">Get in touch</button>
-        </Link>
+        {btnGIT ? (
+          <Link to="/contact">
+            <button className="btn_getintouch">Get in touch</button>
+          </Link>
+        ) : null}
       </div>
     </section>
   );

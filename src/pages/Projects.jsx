@@ -6,12 +6,12 @@ export default function Projects() {
       title: "TaskMate",
       meta: "PROJECT_01 - GROUP PROJECT - 2025",
       description:
-        "A homework and deadline manager for university students. Built with my team (Group 7) as part of the Web Design Bootcamp - 7 pages, full React + Node.js + SQLite stack with localStorage for the prototype.",
+        "A homework and deadline manager for university students. Built with my team as part of the Web Design Bootcamp - full React + supabase",
       tech: ["React.js", "localStorage", "supabase"],
       featured: true,
       links: [
-        { label: "github", url: "#" },
-        { label: "demo", url: "#" },
+        { label: "github", url: "https://github.com/Thalex35/Taskmate-app" },
+        { label: "demo", url: "https://taskmate-app.vercel.app/login" },
       ],
     },
     {
@@ -20,8 +20,11 @@ export default function Projects() {
       description:
         "React app built as a deep dive into the useContext hook. Features a ThemeContext for dark/light mode toggle and an AnimeContext for managing a personal anime watchlist.",
       tech: ["React.js", "useContext", "useState", "CSS Modules"],
-      featured: false,
-      links: [{ label: "github", url: "#" }],
+      featured: true,
+      links: [
+        { label: "github", url: "https://github.com/Thalex35/Manage-Movies" },
+        { label: "demo", url: "https://taskmate-app.vercel.app/login" },
+      ],
     },
   ];
 
@@ -55,7 +58,7 @@ export default function Projects() {
                 ) : null}
                 <div className="project_links">
                   {project.links.map((link) => (
-                    <a key={link.label} href={link.url}>
+                    <a key={link.label} target="_blank" href={link.url}>
                       {link.label}
                     </a>
                   ))}

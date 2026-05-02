@@ -9,15 +9,15 @@ const skillGroups = [
       { name: "HTML5", level: "Comfortable" },
       { name: "CSS3", level: "Comfortable" },
       { name: "Vite", level: "Learning" },
-      { name: "React Router", level: "Learning" },
     ],
   },
   {
     title: "BACKEND & DATA",
     items: [
-      { name: "Java", level: "Intermediate" },
       { name: "SQLite", level: "Comfortable" },
       { name: "REST API", level: "Comfortable" },
+      { name: "Java", level: "Learning" },
+      { name: "Python", level: "Learning" },
     ],
   },
   {
