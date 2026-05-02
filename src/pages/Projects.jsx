@@ -11,7 +11,7 @@ export default function Projects() {
       featured: true,
       links: [
         { label: "github", url: "https://github.com/Thalex35/Taskmate-app" },
-        { label: "demo", url: "https://taskmate-app.vercel.app/login" },
+        { label: "demo", url: "#" },
       ],
     },
     {
@@ -23,7 +23,7 @@ export default function Projects() {
       featured: true,
       links: [
         { label: "github", url: "https://github.com/Thalex35/Manage-Movies" },
-        { label: "demo", url: "https://taskmate-app.vercel.app/login" },
+        { label: "demo", url: "#" },
       ],
     },
   ];
