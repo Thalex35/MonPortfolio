@@ -7,18 +7,25 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 64px;
-  height: 64px;
-  background: rgba(12, 14, 20, 0.85);
-  backdrop-filter: blur(20px);
+  gap: 18px;
+  height: 82px;
+  padding: 0 clamp(20px, 4vw, 72px);
+  background: rgba(7, 11, 17, 0.88);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
 }
 
 nav .logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-hi);
   font-family: var(--font-mono);
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
+  font-size: clamp(16px, 0.95vw, 20px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 nav .logo span {
@@ -27,42 +34,101 @@ nav .logo span {
 
 .links {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 18px);
+}
+
+.links a,
+.btn {
+  min-height: 40px;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  color: var(--text-mid);
+  font-size: clamp(14px, 0.85vw, 16px);
+  font-weight: 500;
+  line-height: 1;
 }
 
 .links a:hover {
   color: var(--text-hi);
-  background: var(--bg-raised);
+  background: rgba(255, 255, 255, 0.035);
 }
+
 .links a.active {
   color: var(--accent);
   background: var(--accent-dim);
   border: 1px solid var(--accent-border);
 }
 
-.links a {
-  text-decoration: none;
-  font-size: 14px;
-  color: var(--text-mid);
-  padding: 6px 14px;
-  border-radius: var(--r-sm);
-  transition:
-    color 0.18s,
-    background 0.18s;
-  display: block;
-}
-
 .btn {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  padding: 8px 20px;
-  border-radius: var(--r-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 146px;
+  padding: 0 20px;
   border: 1px solid var(--accent-border);
   color: var(--accent);
   background: var(--accent-dim);
-  transition: background 0.18s;
+  font-family: var(--font-mono);
+  font-size: clamp(13px, 0.82vw, 15px);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .btn:hover {
-  background: rgba(0, 229, 160, 0.15);
+  background: rgba(0, 230, 170, 0.16);
+}
+
+@media (max-width: 860px) {
+  nav {
+    height: auto;
+    min-height: 82px;
+    flex-wrap: wrap;
+    gap: 14px 18px;
+    padding: 14px 28px 16px;
+  }
+
+  .links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .links a {
+    min-height: 42px;
+    padding: 0 14px;
+  }
+
+  .btn {
+    min-width: auto;
+    min-height: 42px;
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    padding-inline: 20px;
+  }
+
+  .links {
+    gap: 8px;
+  }
+
+  .links a {
+    font-size: 15px;
+  }
 }

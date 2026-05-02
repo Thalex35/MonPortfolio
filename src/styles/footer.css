@@ -1,0 +1,35 @@
+.site_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px clamp(20px, 4vw, 72px) 18px;
+}
+
+.site_footer_brand,
+.site_footer_copy {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.site_footer_brand {
+  color: var(--text-hi);
+}
+
+.site_footer_brand span {
+  color: var(--accent);
+}
+
+.site_footer_copy {
+  color: var(--text-lo);
+  font-size: 16px;
+}
+
+@media (max-width: 560px) {
+  .site_footer_brand,
+  .site_footer_copy {
+    font-size: 13px;
+  }
+}

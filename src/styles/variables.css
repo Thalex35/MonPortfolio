@@ -1,16 +1,16 @@
 :root {
-  --bg-base: #0c0e14;
-  --bg-raised: #111520;
-  --bg-card: #161b27;
-  --bg-card-hover: #1b2133;
+  --bg-base: #070b11;
+  --bg-raised: #0c1718;
+  --bg-card: #101720;
+  --bg-card-hover: #142027;
 
-  --accent: #00e5a0;
-  --accent-dim: rgba(0, 229, 160, 0.08);
-  --accent-border: rgba(0, 229, 160, 0.22);
+  --accent: #00e6aa;
+  --accent-dim: rgba(0, 230, 170, 0.1);
+  --accent-border: rgba(0, 230, 170, 0.36);
 
-  --text-hi: #edf0f7;
-  --text-mid: #6b7590;
-  --text-lo: #353d52;
+  --text-hi: #f4f7fb;
+  --text-mid: #7580a0;
+  --text-lo: #3e4963;
 
   --border: rgba(255, 255, 255, 0.06);
   --border-md: rgba(255, 255, 255, 0.1);
@@ -20,16 +20,44 @@
   --font-mono: "JetBrains Mono", monospace;
 
   --r-sm: 8px;
-  --r-md: 12px;
+  --r-md: 14px;
   --r-lg: 18px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--bg-base);
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 78% 40%, rgba(0, 230, 170, 0.12), transparent 32%),
+    linear-gradient(90deg, rgba(7, 11, 17, 0.92), rgba(7, 11, 17, 0.82)),
+    var(--bg-base);
   color: var(--text-hi);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.75;
   overflow-x: hidden;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    linear-gradient(rgba(0, 230, 170, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 230, 170, 0.055) 1px, transparent 1px);
+  background-size: 78px 78px;
+  mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
 }

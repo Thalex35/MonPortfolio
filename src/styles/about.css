@@ -1,0 +1,198 @@
+.about {
+  padding: 24px clamp(20px, 4vw, 72px) 82px;
+}
+
+.about_kicker {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 0.72vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.about h1 {
+  margin: 12px 0 0;
+  color: var(--text-hi);
+  font-family: var(--font-head);
+  font-size: clamp(36px, 3vw, 56px);
+  font-weight: 800;
+  line-height: 1.06;
+}
+
+.about_intro {
+  margin: 16px 0 0;
+  color: var(--text-mid);
+  font-size: clamp(16px, 1.1vw, 20px);
+}
+
+.about_content {
+  display: grid;
+  grid-template-columns: minmax(230px, 320px) minmax(0, 760px);
+  gap: clamp(30px, 3.5vw, 56px);
+  align-items: start;
+  margin-top: clamp(30px, 3.8vw, 58px);
+}
+
+.about_photo_card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--r-lg);
+  background: linear-gradient(145deg, #10192b 0%, #0a1222 100%);
+  min-height: 250px;
+}
+
+.about_photo_card::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(circle at 22% 24%, rgba(0, 230, 170, 0.16), transparent 46%);
+  pointer-events: none;
+}
+
+.about_photo {
+  width: 118%;
+  height: 118%;
+  object-fit: cover;
+  object-position: center 24%;
+  transform: translate(-8%, -7%);
+}
+
+.about_photo_tag {
+  position: absolute;
+  left: 22px;
+  bottom: 18px;
+  color: var(--text-lo);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.about_text p {
+  margin: 0 0 18px;
+  color: var(--text-mid);
+  font-size: clamp(17px, 1.08vw, 21px);
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+.about_text p:last-child {
+  margin-bottom: 0;
+}
+
+.about_text strong {
+  color: var(--text-hi);
+  font-weight: 700;
+}
+
+.about_extra {
+  margin-top: clamp(42px, 5vw, 86px);
+}
+
+.about_stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 30px);
+  max-width: 620px;
+}
+
+.about_stat {
+  min-height: 74px;
+}
+
+.about_stat_value {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-head);
+  font-size: clamp(26px, 2.15vw, 38px);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about_stat_label {
+  margin: 8px 0 0;
+  color: var(--text-lo);
+  font-size: clamp(12px, 0.86vw, 14px);
+}
+
+.about_hobbies {
+  margin-top: clamp(30px, 3.6vw, 54px);
+}
+
+.about_hobbies_title {
+  margin: 0 0 16px;
+  color: var(--text-lo);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+}
+
+.about_hobbies_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 860px;
+}
+
+.about_hobbies_list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #111a2b;
+  color: var(--text-mid);
+  font-size: 14px;
+}
+
+@media (max-width: 860px) {
+  .about {
+    padding: 22px 28px 62px;
+  }
+
+  .about_content {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .about_photo_card {
+    max-width: 340px;
+    min-height: 230px;
+  }
+
+  .about_stats {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .about {
+    padding: 20px 18px 54px;
+  }
+
+  .about h1 {
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .about_intro {
+    font-size: 15px;
+  }
+
+  .about_text p {
+    font-size: 16px;
+  }
+
+  .about_stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about_hobbies_list {
+    gap: 10px;
+  }
+
+  .about_hobbies_list span {
+    font-size: 13px;
+  }
+}
