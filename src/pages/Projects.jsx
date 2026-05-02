@@ -7,12 +7,12 @@ export default function Projects() {
       meta: "PROJECT_01 - GROUP PROJECT - 2025",
       description:
         "A homework and deadline manager for university students. Built with my team (Group 7) as part of the Web Design Bootcamp - 7 pages, full React + Node.js + SQLite stack with localStorage for the prototype.",
-      tech: ["React.js", "Node.js", "Express", "SQLite", "localStorage"],
+      tech: ["React.js", "localStorage", "supabase"],
       featured: true,
       links: [
         { label: "github", url: "#" },
         { label: "demo", url: "#" },
-      ]
+      ],
     },
     {
       title: "Anime Watchlist",
@@ -22,7 +22,7 @@ export default function Projects() {
       tech: ["React.js", "useContext", "useState", "CSS Modules"],
       featured: false,
       links: [{ label: "github", url: "#" }],
-    }
+    },
   ];
 
   return (
@@ -50,7 +50,9 @@ export default function Projects() {
               </div>
 
               <div className="project_side">
-                {project.featured ? <p className="project_badge">featured</p> : null}
+                {project.featured ? (
+                  <p className="project_badge">featured</p>
+                ) : null}
                 <div className="project_links">
                   {project.links.map((link) => (
                     <a key={link.label} href={link.url}>

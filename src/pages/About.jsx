@@ -13,14 +13,15 @@ export default function About() {
       <div className="about_content">
         <div className="about_photo_card">
           <img src={me} alt="Theodore portrait" className="about_photo" />
-          <span className="about_photo_tag">// your photo</span>
+          <span className="about_photo_nameplate">Theodore Louisjuste</span>
         </div>
 
         <div className="about_text">
           <p>
             I&apos;m <strong>Theodore</strong>, a Computer Science student at{" "}
             <strong>UoPeople</strong> and Business Management student at{" "}
-            <strong>UEspoir</strong>, based in <strong>Port-au-Prince, Haiti</strong>.
+            <strong>UEspoir</strong>, based in <strong>Aquin Sud, Haiti</strong>
+            .
           </p>
           <p>
             I&apos;m passionate about building things that are{" "}
@@ -44,7 +45,7 @@ export default function About() {
       <div className="about_extra">
         <div className="about_stats">
           <div className="about_stat">
-            <p className="about_stat_value">3+</p>
+            <p className="about_stat_value">2+</p>
             <p className="about_stat_label">Projects built</p>
           </div>
           <div className="about_stat">
