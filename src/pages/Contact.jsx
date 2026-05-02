@@ -13,7 +13,8 @@ export default function Contact() {
     if (!formspreeEndpoint) {
       setStatus({
         type: "error",
-        message: "Formspree is not configured yet. Add VITE_FORMSPREE_ENDPOINT in .env.",
+        message:
+          "Formspree is not configured yet. Add VITE_FORMSPREE_ENDPOINT in .env.",
       });
       return;
     }
@@ -60,16 +61,21 @@ export default function Contact() {
       <div className="contact_layout">
         <div className="contact_left">
           <p className="contact_copy">
-            Whether you have a project in mind, an opportunity to share, or
-            just want to connect - my inbox is always open.
+            Whether you have a project in mind, an opportunity to share, or just
+            want to connect - my inbox is always open.
           </p>
 
           <div className="contact_cards">
-            <a className="contact_card" href="mailto:theodore.louisjuste@gmail.com">
+            <a
+              className="contact_card"
+              href="mailto:theodore.louisjuste@gmail.com"
+            >
               <span className="contact_icon">✉</span>
               <div>
                 <p className="contact_label">email</p>
-                <p className="contact_value">theodore@email.com</p>
+                <p className="contact_value">
+                  louisjuste.theodore.jr@gmail.com
+                </p>
               </div>
             </a>
 
@@ -129,14 +135,21 @@ export default function Contact() {
             required
           />
 
-          <input type="text" name="_gotcha" className="contact_honeypot" tabIndex={-1} />
+          <input
+            type="text"
+            name="_gotcha"
+            className="contact_honeypot"
+            tabIndex={-1}
+          />
 
           <button type="submit" disabled={isSending}>
             {isSending ? "Sending..." : "Send message"}
           </button>
 
           {status.message ? (
-            <p className={`contact_status ${status.type === "success" ? "is_success" : "is_error"}`}>
+            <p
+              className={`contact_status ${status.type === "success" ? "is_success" : "is_error"}`}
+            >
               {status.message}
             </p>
           ) : null}

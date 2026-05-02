@@ -37,35 +37,75 @@
 .about_photo_card {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--accent-border);
-  border-radius: var(--r-lg);
+  border: 1px solid rgba(0, 230, 170, 0.28);
+  border-radius: 18px;
   background: linear-gradient(145deg, #10192b 0%, #0a1222 100%);
-  min-height: 250px;
+  min-height: 260px;
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .about_photo_card::before {
   position: absolute;
   inset: 0;
   content: "";
-  background: radial-gradient(circle at 22% 24%, rgba(0, 230, 170, 0.16), transparent 46%);
+  z-index: 2;
+  background:
+    radial-gradient(
+      circle at 20% 18%,
+      rgba(0, 230, 170, 0.16),
+      transparent 45%
+    ),
+    linear-gradient(
+      to top,
+      rgba(8, 12, 22, 0.38),
+      rgba(8, 12, 22, 0.05) 45%,
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+.about_photo_card::after {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 44px;
+  height: 44px;
+  border-right: 2px solid rgba(0, 230, 170, 0.55);
+  border-bottom: 2px solid rgba(0, 230, 170, 0.55);
+  border-radius: 0 0 14px 0;
+  content: "";
+  z-index: 3;
   pointer-events: none;
 }
 
 .about_photo {
-  width: 118%;
-  height: 118%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center 24%;
-  transform: translate(-8%, -7%);
+  object-position: center 30%;
+  transform: scale(1.04);
+  transform-origin: center;
+  filter: saturate(0.92) contrast(1.04);
 }
 
-.about_photo_tag {
+.about_photo_nameplate {
   position: absolute;
-  left: 22px;
-  bottom: 18px;
-  color: var(--text-lo);
+  right: 10px;
+  bottom: 10px;
+  z-index: 4;
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid rgba(0, 230, 170, 0.34);
+  border-radius: 999px;
+  background: rgba(7, 11, 17, 0.9);
+  color: #d5e1f8;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
 }
 
 .about_text p {
@@ -86,18 +126,24 @@
 }
 
 .about_extra {
-  margin-top: clamp(42px, 5vw, 86px);
+  margin-top: clamp(44px, 5vw, 86px);
+  display: grid;
+  gap: 28px;
 }
 
 .about_stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 30px);
-  max-width: 620px;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: clamp(12px, 1.4vw, 18px);
+  max-width: 760px;
 }
 
 .about_stat {
-  min-height: 74px;
+  min-height: 88px;
+  border: 1px solid rgba(0, 230, 170, 0.16);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(13, 20, 32, 0.86), rgba(10, 16, 27, 0.82));
+  padding: 12px 14px;
 }
 
 .about_stat_value {
@@ -111,38 +157,41 @@
 
 .about_stat_label {
   margin: 8px 0 0;
-  color: var(--text-lo);
+  color: #97a4c2;
   font-size: clamp(12px, 0.86vw, 14px);
 }
 
 .about_hobbies {
-  margin-top: clamp(30px, 3.6vw, 54px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  background: rgba(11, 18, 30, 0.65);
+  padding: 14px;
 }
 
 .about_hobbies_title {
-  margin: 0 0 16px;
-  color: var(--text-lo);
+  margin: 0 0 14px;
+  color: #8d9bbd;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.22em;
 }
 
 .about_hobbies_list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 860px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, max-content));
+  gap: 10px;
+  justify-content: start;
 }
 
 .about_hobbies_list span {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
+  min-height: 34px;
   padding: 0 14px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0, 230, 170, 0.14);
   border-radius: 999px;
-  background: #111a2b;
-  color: var(--text-mid);
+  background: linear-gradient(145deg, rgba(17, 26, 43, 0.92), rgba(12, 19, 33, 0.92));
+  color: #b4c0da;
   font-size: 14px;
 }
 
@@ -162,7 +211,12 @@
   }
 
   .about_stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     max-width: 100%;
+  }
+
+  .about_hobbies_list {
+    grid-template-columns: repeat(2, minmax(0, max-content));
   }
 }
 
@@ -189,7 +243,8 @@
   }
 
   .about_hobbies_list {
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 9px;
   }
 
   .about_hobbies_list span {

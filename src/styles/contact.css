@@ -1,5 +1,6 @@
 .contact {
   padding: 24px clamp(20px, 4vw, 72px) 84px;
+  border-top: 1px solid rgba(0, 230, 170, 0.2);
 }
 
 .contact_kicker {
@@ -50,7 +51,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0, 230, 170, 0.2);
   border-radius: 12px;
   background: rgba(16, 23, 36, 0.9);
   padding: 10px 12px;
@@ -98,10 +99,14 @@
   display: grid;
   align-content: start;
   gap: 8px;
+  border: 1px solid rgba(0, 230, 170, 0.18);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(12, 18, 30, 0.55);
 }
 
 .contact_form label {
-  color: var(--text-lo);
+  color: #8d9bbd;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -110,7 +115,7 @@
 .contact_form input,
 .contact_form textarea {
   width: 100%;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0, 230, 170, 0.14);
   border-radius: 10px;
   background: rgba(16, 23, 36, 0.86);
   padding: 10px 12px;
