@@ -52,27 +52,30 @@ export default function Contact() {
   return (
     <section className="contact">
       <p className="contact_kicker">CONTACT</p>
-      <h1>Let's work together.</h1>
+      <h1>Let&apos;s work together.</h1>
       <p className="contact_intro">
-        Open to internships, collaborations, or a conversation about tech.
-        Don&apos;t hesitate.
+        Available for freelance website and web application projects, as well
+        as frontend opportunities.
       </p>
 
       <div className="contact_layout">
         <div className="contact_left">
+          <h2>Have a project in mind?</h2>
           <p className="contact_copy">
-            Whether you have a project in mind, an opportunity to share, or just
-            want to connect - my inbox is always open.
+            Share what you&apos;re looking to build. I&apos;m happy to discuss a
+            website, a web application, or another frontend project.
           </p>
 
           <div className="contact_cards">
             <a
               className="contact_card"
-              href="mailto:theodore.louisjuste@gmail.com"
+              href="mailto:louisjuste.theodore.jr@gmail.com"
             >
-              <span className="contact_icon">✉</span>
+              <span className="contact_icon" aria-hidden="true">
+                ✉
+              </span>
               <div>
-                <p className="contact_label">email</p>
+                <p className="contact_label">Email</p>
                 <p className="contact_value">
                   louisjuste.theodore.jr@gmail.com
                 </p>
@@ -83,12 +86,14 @@ export default function Contact() {
               className="contact_card"
               href="https://github.com/Thalex35"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
-              <span className="contact_icon">⌘</span>
+              <span className="contact_icon" aria-hidden="true">
+                ⌘
+              </span>
               <div>
-                <p className="contact_label">github</p>
-                <p className="contact_value">github.com/theodore</p>
+                <p className="contact_label">GitHub</p>
+                <p className="contact_value">github.com/Thalex35</p>
               </div>
             </a>
 
@@ -96,24 +101,32 @@ export default function Contact() {
               className="contact_card"
               href="https://www.linkedin.com/in/theodore-louisjuste-763412407/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
-              <span className="contact_icon">in</span>
+              <span className="contact_icon" aria-hidden="true">
+                in
+              </span>
               <div>
-                <p className="contact_label">linkedin</p>
-                <p className="contact_value">linkedin.com/in/theodore</p>
+                <p className="contact_label">LinkedIn</p>
+                <p className="contact_value">View LinkedIn profile</p>
               </div>
             </a>
           </div>
         </div>
 
-        <form className="contact_form" onSubmit={handleSubmit}>
+        <form
+          className="contact_form"
+          onSubmit={handleSubmit}
+          aria-label="Project inquiry"
+        >
+          <h2>Send a project inquiry</h2>
           <label htmlFor="contact-name">NAME</label>
           <input
             id="contact-name"
             name="name"
             type="text"
             placeholder="Your name"
+            autoComplete="name"
             required
           />
 
@@ -123,6 +136,7 @@ export default function Contact() {
             name="email"
             type="email"
             placeholder="your@email.com"
+            autoComplete="email"
             required
           />
 
@@ -140,6 +154,8 @@ export default function Contact() {
             name="_gotcha"
             className="contact_honeypot"
             tabIndex={-1}
+            aria-hidden="true"
+            autoComplete="off"
           />
 
           <button type="submit" disabled={isSending}>
@@ -149,6 +165,8 @@ export default function Contact() {
           {status.message ? (
             <p
               className={`contact_status ${status.type === "success" ? "is_success" : "is_error"}`}
+              role="status"
+              aria-live="polite"
             >
               {status.message}
             </p>

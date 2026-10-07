@@ -2,31 +2,25 @@ import "../styles/skills.css";
 
 const skillGroups = [
   {
-    title: "FRONTEND DEVELOPMENT",
+    title: "FRONTEND",
     items: [
-      { name: "React.js", level: "Intermediate" },
-      { name: "JavaScript", level: "Intermediate" },
-      { name: "HTML5", level: "Comfortable" },
-      { name: "CSS3", level: "Comfortable" },
-      { name: "Vite", level: "Learning" },
+      { name: "React", level: "Used in projects" },
+      { name: "JavaScript", level: "Used in projects" },
+      { name: "HTML", level: "Frontend foundation" },
+      { name: "CSS", level: "Frontend foundation" },
+      { name: "Vite", level: "Build tooling" },
     ],
   },
   {
-    title: "BACKEND & DATA",
+    title: "TOOLS & VERSION CONTROL",
     items: [
-      { name: "SQLite", level: "Comfortable" },
-      { name: "REST API", level: "Comfortable" },
-      { name: "Java", level: "Learning" },
-      { name: "Python", level: "Learning" },
+      { name: "Git", level: "Used for version control" },
+      { name: "GitHub", level: "Code hosting & collaboration" },
     ],
   },
   {
-    title: "TOOLS & ENVIRONMENT",
-    items: [
-      { name: "Git", level: "Comfortable" },
-      { name: "GitHub", level: "Comfortable" },
-      { name: "VS Code", level: "Daily use" },
-    ],
+    title: "PROJECT EXPERIENCE",
+    items: [{ name: "Supabase", level: "Used in TaskMate" }],
   },
 ];
 
@@ -36,19 +30,19 @@ export default function Skills() {
       <p className="skills_kicker">SKILLS</p>
       <h1>What I work with.</h1>
       <p className="skills_intro">
-        Tools and technologies I use daily - built through coursework, personal
-        projects, and a lot of practice.
+        My current frontend stack, plus tools I&apos;ve used in coursework and
+        projects. The labels describe experience, not proficiency ratings.
       </p>
 
       <div className="skills_groups">
         {skillGroups.map((group) => (
           <section className="skills_group" key={group.title}>
-            <p className="skills_group_title">{group.title}</p>
+            <h2 className="skills_group_title">{group.title}</h2>
             <div className="skills_cards">
               {group.items.map((item) => (
                 <article
                   key={item.name}
-                  className={`skill_card ${item.level === "Learning" ? "is_learning" : "is_accent"}`}
+                  className="skill_card is_accent"
                 >
                   <p className="skill_name">{item.name}</p>
                   <p className="skill_level">{item.level}</p>

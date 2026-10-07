@@ -1,32 +1,29 @@
 import { Link } from "react-router-dom";
 import "../../styles/hero.css";
 
-export default function Hero({ btnGIT = true }) {
+export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero_text">
-        <p className="word">available for opportunities</p>
-        <h2>Hello, I'm Theodore -</h2>
+      <div className="hero_content">
+        <p className="word">Open to freelance &amp; frontend opportunities</p>
+        <p className="hero_greeting">Hi, I&apos;m Theodore Louisjuste.</p>
         <h1>
-          Front-end
+          Frontend
           <span>Developer.</span>
         </h1>
         <p className="para">
-          CS student at UoPeople. I build clean, functional web applications
-          with modern tools - React, Java - and a strong eye for detail.
+          I&apos;m a Computer Science student at UoPeople, building useful web
+          experiences with React, JavaScript, HTML, CSS, and Vite.
         </p>
-      </div>
 
-      <div className="hero_actions">
-        <Link to="/projects">
-          <button className="btn_see">View projects</button>
-        </Link>
-
-        {btnGIT ? (
-          <Link to="/contact">
-            <button className="btn_getintouch">Get in touch</button>
+        <div className="hero_actions">
+          <Link to="/projects" className="btn_see">
+            Explore projects
           </Link>
-        ) : null}
+          <Link to="/contact" className="btn_getintouch">
+            Contact me
+          </Link>
+        </div>
       </div>
     </section>
   );

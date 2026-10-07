@@ -18,14 +18,7 @@ function App() {
             </Layout>
           }
         />
-        <Route
-          path="/contact"
-          element={
-            <Layout btnGIT={false}>
-              <Contact />
-            </Layout>
-          }
-        />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
 
         <Route
           path="/about"

@@ -9,8 +9,8 @@
   --accent-border: rgba(0, 230, 170, 0.36);
 
   --text-hi: #f4f7fb;
-  --text-mid: #7580a0;
-  --text-lo: #3e4963;
+  --text-mid: #a1adc5;
+  --text-lo: #8491ad;
 
   --border: rgba(255, 255, 255, 0.06);
   --border-md: rgba(255, 255, 255, 0.1);
@@ -39,7 +39,6 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.75;
-  overflow-x: hidden;
 }
 
 body::before {
@@ -60,4 +59,55 @@ a {
 
 button {
   font: inherit;
+}
+
+.site_shell {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.site_main {
+  min-height: calc(100vh - 74px);
+  min-height: calc(100svh - 74px);
+  padding-top: 76px;
+}
+
+.skip_link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 200;
+  padding: 10px 14px;
+  transform: translateY(-160%);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--r-sm);
+  background: var(--bg-card);
+  color: var(--text-hi);
+  text-decoration: none;
+}
+
+.skip_link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .site_main {
+    padding-top: 106px;
+  }
 }

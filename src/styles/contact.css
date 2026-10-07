@@ -1,4 +1,6 @@
 .contact {
+  width: min(100%, 1440px);
+  margin-inline: auto;
   padding: 24px clamp(20px, 4vw, 72px) 84px;
   border-top: 1px solid rgba(0, 230, 170, 0.2);
 }
@@ -29,14 +31,23 @@
 
 .contact_layout {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(22px, 3vw, 38px);
   margin-top: clamp(28px, 3.2vw, 44px);
 }
 
+.contact_left h2,
+.contact_form h2 {
+  margin: 0;
+  color: var(--text-hi);
+  font-family: var(--font-head);
+  font-size: clamp(22px, 1.8vw, 28px);
+  line-height: 1.2;
+}
+
 .contact_copy {
   max-width: 46ch;
-  margin: 0;
+  margin: 12px 0 0;
   color: var(--text-mid);
   font-size: clamp(16px, 1.03vw, 19px);
 }
@@ -49,6 +60,7 @@
 
 .contact_card {
   display: flex;
+  min-width: 0;
   align-items: center;
   gap: 12px;
   border: 1px solid rgba(0, 230, 170, 0.2);
@@ -93,6 +105,7 @@
   margin-top: 2px;
   color: var(--text-hi);
   font-size: 15px;
+  overflow-wrap: anywhere;
 }
 
 .contact_form {
@@ -101,8 +114,12 @@
   gap: 8px;
   border: 1px solid rgba(0, 230, 170, 0.18);
   border-radius: 14px;
-  padding: 14px;
+  padding: clamp(16px, 2vw, 24px);
   background: rgba(12, 18, 30, 0.55);
+}
+
+.contact_form h2 {
+  margin-bottom: 8px;
 }
 
 .contact_form label {
@@ -122,7 +139,6 @@
   color: var(--text-hi);
   font-family: var(--font-body);
   font-size: 15px;
-  outline: none;
 }
 
 .contact_form textarea {
@@ -130,8 +146,8 @@
   min-height: 96px;
 }
 
-.contact_form input:focus,
-.contact_form textarea:focus {
+.contact_form input:focus-visible,
+.contact_form textarea:focus-visible {
   border-color: var(--accent-border);
 }
 
@@ -154,12 +170,14 @@
   cursor: not-allowed;
 }
 
-.contact_honeypot {
+.contact_form .contact_honeypot {
   position: absolute;
-  left: -9999px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
   width: 1px;
   height: 1px;
-  opacity: 0;
+  overflow: hidden;
 }
 
 .contact_status {
@@ -196,5 +214,9 @@
 
   .contact_value {
     font-size: 14px;
+  }
+
+  .contact_form button {
+    width: 100%;
   }
 }

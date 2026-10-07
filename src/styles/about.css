@@ -1,4 +1,6 @@
 .about {
+  width: min(100%, 1440px);
+  margin-inline: auto;
   padding: 24px clamp(20px, 4vw, 72px) 82px;
 }
 
@@ -37,10 +39,10 @@
 .about_photo_card {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 4 / 5;
   border: 1px solid rgba(0, 230, 170, 0.28);
   border-radius: 18px;
   background: linear-gradient(145deg, #10192b 0%, #0a1222 100%);
-  min-height: 260px;
   box-shadow:
     0 18px 36px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -81,6 +83,7 @@
 }
 
 .about_photo {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -173,6 +176,7 @@
   color: #8d9bbd;
   font-family: var(--font-mono);
   font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.22em;
 }
 
@@ -207,7 +211,6 @@
 
   .about_photo_card {
     max-width: 340px;
-    min-height: 230px;
   }
 
   .about_stats {

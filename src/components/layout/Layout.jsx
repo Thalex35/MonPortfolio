@@ -1,15 +1,12 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Hero from "../sections/Hero";
 
-export default function Layout({ children, btnGIT = true }) {
+export default function Layout({ children }) {
   return (
-    <div>
+    <div className="site_shell">
+      <a className="skip_link" href="#main-content">Skip to content</a>
       <Navbar />
-      <div>
-        <Hero btnGIT={btnGIT} />
-        <main>{children}</main>
-      </div>
+      <main id="main-content" className="site_main">{children}</main>
       <Footer />
     </div>
   );

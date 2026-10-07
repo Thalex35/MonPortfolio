@@ -1,4 +1,6 @@
 .skills {
+  width: min(100%, 1440px);
+  margin-inline: auto;
   padding: 24px clamp(20px, 4vw, 72px) 84px;
 }
 
@@ -44,6 +46,7 @@
   color: var(--text-mid);
   font-family: var(--font-mono);
   font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.22em;
 }
 
@@ -72,11 +75,6 @@
   );
 }
 
-.skill_card.is_learning {
-  border-color: rgba(255, 255, 255, 0.09);
-  background: linear-gradient(145deg, rgba(13, 20, 33, 0.95), rgba(11, 17, 28, 0.95));
-}
-
 .skill_name {
   margin: 0;
   color: var(--text-hi);
@@ -87,10 +85,6 @@
 
 .skill_card.is_accent .skill_name {
   color: var(--accent);
-}
-
-.skill_card.is_learning .skill_name {
-  color: #d9e2f7;
 }
 
 .skill_level {
