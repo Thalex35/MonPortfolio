@@ -76,4 +76,49 @@ export const additionalProjects = [
     github: "https://github.com/Thalex35/la-table-de-caius",
     demo: "https://la-table-de-caius.vercel.app",
   },
+  {
+    name: "TeacherHub",
+    type: "Teacher & academic management",
+    description:
+      "A teacher-facing management app for organizing classes and students, planning lessons, managing curriculum and attendance, and recording assignments, evaluations, and grades.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "TanStack Start",
+      "Supabase",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/Thalex35/TeacherHub",
+  },
+  {
+    name: "Children Management App",
+    type: "Children's department management",
+    description:
+      "An internal management system for the MICEVA Children's Department, with authenticated child records and guardian contacts, profile-completeness checks, committee and administration records, calendar activities, and reports.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "TanStack Start",
+      "Supabase",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/Thalex35/miceva-children-connect-main",
+  },
+  {
+    name: "Nexora",
+    type: "Personal life management",
+    description:
+      "A private personal workspace that brings daily planning and review together with tasks, routines, goals, projects, finance, learning, notes, achievements, life history, and analytics.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "TanStack Start",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "Supabase Auth",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/Thalex35/Nexora",
+    demo: "https://nexora-lmg.vercel.app",
+  },
 ];

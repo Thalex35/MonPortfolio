@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { usePortfolio } from "../hooks/usePortfolio";
+import { contactHref } from "../lib/portfolio";
 import "../styles/contact.css";
 
 export default function Contact() {
+  const { contactLinks, error } = usePortfolio();
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState({ type: "", message: "" });
   const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || "";
@@ -57,6 +60,7 @@ export default function Contact() {
         Available for freelance website and web application projects, as well
         as frontend opportunities.
       </p>
+      {error ? <p className="portfolio_content_notice" role="status">{error} Showing saved portfolio content.</p> : null}
 
       <div className="contact_layout">
         <div className="contact_left">
@@ -67,50 +71,36 @@ export default function Contact() {
           </p>
 
           <div className="contact_cards">
-            <a
-              className="contact_card"
-              href="mailto:louisjuste.theodore.jr@gmail.com"
-            >
-              <span className="contact_icon" aria-hidden="true">
-                ✉
-              </span>
-              <div>
-                <p className="contact_label">Email</p>
-                <p className="contact_value">
-                  louisjuste.theodore.jr@gmail.com
-                </p>
-              </div>
-            </a>
-
-            <a
-              className="contact_card"
-              href="https://github.com/Thalex35"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="contact_icon" aria-hidden="true">
-                ⌘
-              </span>
-              <div>
-                <p className="contact_label">GitHub</p>
-                <p className="contact_value">github.com/Thalex35</p>
-              </div>
-            </a>
-
-            <a
-              className="contact_card"
-              href="https://www.linkedin.com/in/theodore-louisjuste-763412407/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="contact_icon" aria-hidden="true">
-                in
-              </span>
-              <div>
-                <p className="contact_label">LinkedIn</p>
-                <p className="contact_value">View LinkedIn profile</p>
-              </div>
-            </a>
+            {contactLinks.filter((link) => link.enabled).map((link) => {
+              const isExternal = link.kind === "url";
+              const value = link.kind === "email"
+                ? link.value
+                : link.label.toLowerCase() === "linkedin"
+                  ? "View LinkedIn profile"
+                  : link.value.replace(/^https?:\/\//, "").replace(/\/$/, "");
+              const icon = link.kind === "email"
+                ? "✉"
+                : link.label.toLowerCase() === "linkedin"
+                  ? "in"
+                  : link.label.toLowerCase() === "github"
+                    ? "⌘"
+                    : "↗";
+              return (
+                <a
+                  className="contact_card"
+                  href={contactHref(link)}
+                  key={link.id}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                >
+                  <span className="contact_icon" aria-hidden="true">{icon}</span>
+                  <div>
+                    <p className="contact_label">{link.label}</p>
+                    <p className="contact_value">{value}</p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
 
