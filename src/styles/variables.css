@@ -90,6 +90,17 @@ button {
   transform: translateY(0);
 }
 
+.portfolio_content_notice {
+  width: min(100%, 1440px);
+  margin: 18px auto 0;
+  border: 1px solid rgba(0, 230, 170, 0.22);
+  border-radius: 10px;
+  background: rgba(0, 230, 170, 0.06);
+  padding: 10px 14px;
+  color: var(--text-mid);
+  font-size: 13px;
+}
+
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 4px;

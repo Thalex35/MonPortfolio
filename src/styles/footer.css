@@ -15,6 +15,23 @@
   font-weight: 700;
 }
 
+.site_footer_links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.site_footer_links a {
+  color: var(--text-mid);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.site_footer_links a:hover {
+  color: var(--accent);
+}
+
 .site_footer_brand {
   color: var(--text-hi);
 }
@@ -32,5 +49,14 @@
   .site_footer_brand,
   .site_footer_copy {
     font-size: 13px;
+  }
+
+  .site_footer {
+    flex-wrap: wrap;
+  }
+
+  .site_footer_links {
+    order: 3;
+    width: 100%;
   }
 }
